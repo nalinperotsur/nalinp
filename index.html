@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Times New Roman', Times, serif, sans-serif;
+      font-family: "Times New Roman", Times, serif;
       background: #0f172a;
       color: #e5e7eb;
     }
@@ -28,19 +28,18 @@
     aside {
       position: fixed;
       top: 100px;
-      left: -300px; /* gömd */
-      width: 200px;
-      height: 100vh;
+      left: -260px;              /* gömd */
+      width: 220px;
+      height: calc(100vh - 100px);
       background: #0b1224;
       padding: 16px;
       transition: left 0.3s ease;
       z-index: 1000;
       border-right: 1px solid #1f2a44;
+      overflow: auto;
     }
 
-    aside.open {
-      left: 0;
-    }
+    aside.open { left: 0; }
 
     /* tabell */
     .sidetable {
@@ -55,19 +54,14 @@
       margin-bottom: 8px;
     }
 
-    .sidetable th,
-    .sidetable td {
-      padding: 8px;
-    }
-
-    .sidetable th {
-      background: #111c35;
-    }
+    .sidetable td { padding: 10px 0; }
 
     a {
       color: #b2bbbe;
       text-decoration: none;
     }
+
+    a:hover { text-decoration: underline; }
 
     main {
       padding: 80px 24px;
@@ -95,22 +89,21 @@
 
   <!-- innehåll -->
   <main>
-    <h1 id="index.html">WebCraft Studio</h1>
+    <h1 id="hem">WebCraft Studio</h1>
     <p>Jag bygger snabba, moderna webbplatser.</p>
 
-    <h2 id="tjanster.html">Tjänster</h2>
+    <h2 id="tjanster">Tjänster</h2>
     <p>Webbdesign, HTML/CSS, responsiva sidor.</p>
 
-    <h2 id="projekt.html">Projekt</h2>
+    <h2 id="projekt">Projekt</h2>
     <p>Exempelprojekt visas här.</p>
 
-    <h2 id="kontakt.html">Kontakt</h2>
-    <a href="mailto:nalin.perotsur@gmail.com"
-   target="_blank"
-   rel="noopener noreferrer">
-  Email Us
-</a>
-
+    <h2 id="kontakt">Kontakt</h2>
+    <p>
+      <a href="mailto:nalin.perotsur@gmail.com" target="_blank" rel="noopener noreferrer">
+        Email Us
+      </a>
+    </p>
   </main>
 
   <script>
