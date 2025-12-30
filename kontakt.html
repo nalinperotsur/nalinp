@@ -1,38 +1,91 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<title>Kontakt</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebCraft Studio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    /* ☰ hamburgarknapp */
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      padding: 16px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1001;
+      user-select: none;
+    }
+
+    /* sidomeny */
+    aside {
+      position: fixed;
+      top: 100px;              /* flyttar ner menyn */
+      left: -220px;            /* gömd (ska matcha width) */
+      width: 220px;
+      height: calc(100vh - 100px);
+      background: #0b1224;
+      padding: 16px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      border-right: 1px solid #1f2a44;
+      overflow: auto;
+    }
+
+    aside.open { left: 0; }
+
+    /* meny som lista (enklare än tabell) */
+    nav a {
+      display: block;
+      padding: 10px 0;
+      color: #b2bbbe;
+      text-decoration: none;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      padding: 80px 24px;
+      max-width: 700px;
+      margin: auto;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <!-- ☰ knapp -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<aside id="sidebar">
-  <a href="index.html">Hem</a>
-  <a href="tjanster.html">Tjänster</a>
-  <a href="projekt.html">Projekt</a>
-  <a href="kontakt.html">Kontakt</a>
-</aside>
+  <!-- sidomeny -->
+  <aside id="sidebar">
+    <nav aria-label="Meny">
+      <a href="index.html">Hem</a>
+      <a href="tjanster.html">Tjänster</a>
+      <a href="projekt.html">Projekt</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </aside>
 
-<main>
-  <h1>Kontakt</h1>
-  <p>
-    <a href="mailto:nalin.perotsur@example.com"
-       target="_blank"
-       rel="noopener noreferrer">
-       Maila mig
-    </a>
-  </p>
-</main>
+  <!-- innehåll -->
+  <main>
+    <h1>Kontakt</h1>
+    <p>Jag bygger snabba, moderna webbplatser.</p>
+  </main>
 
-<script>
-function toggleMenu() {
-  document.getElementById("sidebar").classList.toggle("open");
-}
-</script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
-n
