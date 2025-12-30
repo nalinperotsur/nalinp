@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidtabell med meny</title>
+  <title>WebCraft Studio</title>
 
   <style>
     body {
@@ -22,13 +22,14 @@
       top: 0;
       left: 0;
       z-index: 1001;
+      user-select: none;
     }
 
     /* sidomeny */
     aside {
       position: fixed;
-      top: 100px;
-      left: -260px;              /* gömd */
+      top: 100px;              /* flyttar ner menyn */
+      left: -220px;            /* gömd (ska matcha width) */
       width: 220px;
       height: calc(100vh - 100px);
       background: #0b1224;
@@ -41,27 +42,15 @@
 
     aside.open { left: 0; }
 
-    /* tabell */
-    .sidetable {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    .sidetable caption {
-      text-align: left;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .sidetable td { padding: 10px 0; }
-
-    a {
+    /* meny som lista (enklare än tabell) */
+    nav a {
+      display: block;
+      padding: 10px 0;
       color: #b2bbbe;
       text-decoration: none;
     }
 
-    a:hover { text-decoration: underline; }
+    nav a:hover { text-decoration: underline; }
 
     main {
       padding: 80px 24px;
@@ -78,32 +67,18 @@
 
   <!-- sidomeny -->
   <aside id="sidebar">
-    <table class="sidetable">
-      <caption>Meny</caption>
-      <tr><td><a href="#hem">Hem</a></td></tr>
-      <tr><td><a href="#tjanster">Tjänster</a></td></tr>
-      <tr><td><a href="#projekt">Projekt</a></td></tr>
-      <tr><td><a href="#kontakt">Kontakt</a></td></tr>
-    </table>
+    <nav aria-label="Meny">
+      <a href="index.html">Hem</a>
+      <a href="tjanster.html">Tjänster</a>
+      <a href="projekt.html">Projekt</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
   </aside>
 
   <!-- innehåll -->
   <main>
-    <h1 id="hem">WebCraft Studio</h1>
+    <h1>WebCraft Studio</h1>
     <p>Jag bygger snabba, moderna webbplatser.</p>
-
-    <h2 id="tjanster">Tjänster</h2>
-    <p>Webbdesign, HTML/CSS, responsiva sidor.</p>
-
-    <h2 id="projekt">Projekt</h2>
-    <p>Exempelprojekt visas här.</p>
-
-    <h2 id="kontakt">Kontakt</h2>
-    <p>
-      <a href="mailto:nalin.perotsur@gmail.com" target="_blank" rel="noopener noreferrer">
-        Email Us
-      </a>
-    </p>
   </main>
 
   <script>
