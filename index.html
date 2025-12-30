@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="sv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,41 +10,125 @@
       background: #0f172a;
       color: #e5e7eb;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
     }
+
+    /* Layout: sidomeny + innehåll */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    aside {
+      border-right: 1px solid #1f2a44;
+      padding: 16px;
+      background: #0b1224;
+    }
+
+    main {
+      padding: 24px;
+    }
+
+    /* Sidtabell */
+    .sidetable {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .sidetable caption {
+      text-align: left;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .sidetable th, .sidetable td {
+      border: 1px solid #1f2a44;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .sidetable th {
+      background: #111c35;
+    }
+
+    .note {
+      color: #94a3b8;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    /* Portfolio-stil */
     .container {
-      text-align: center;
-      max-width: 600px;
+      max-width: 700px;
     }
+
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem 0;
     }
+
     p {
       font-size: 1.1rem;
       line-height: 1.6;
       color: #cbd5f5;
     }
+
     a {
-      display: inline-block;
-      margin-top: 1.5rem;
       color: #38bdf8;
       text-decoration: none;
       font-weight: bold;
     }
+
+    a:hover { text-decoration: underline; }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>WebCraft Studio</h1>
-    <p>
-      I build fast, modern websites for small businesses.<br />
-      Clean design. Mobile friendly. Easy to maintain.
-    </p>
-    <a href="mailto:nalin.perotsur@.com">Contact me</a>
+  <div class="layout">
+    <aside>
+      <table class="sidetable" aria-label="Sidtabell">
+        <caption>Meny</caption>
+        <thead>
+          <tr>
+            <th>Sektion</th>
+            <th>Länk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Hem</td><td><a href="#hem">Gå</a></td></tr>
+          <tr><td>Tjänster</td><td><a href="#tjanster">Gå</a></td></tr>
+          <tr><td>Projekt</td><td><a href="#projekt">Gå</a></td></tr>
+          <tr><td>Kontakt</td><td><a href="#kontakt">Gå</a></td></tr>
+        </tbody>
+      </table>
+
+      <p class="note">Klicka i tabellen för att hoppa till sektioner.</p>
+    </aside>
+
+    <main>
+      <div class="container">
+        <h1 id="hem">WebCraft Studio</h1>
+        <p>
+          I build fast, modern websites for small businesses.<br />
+          Clean design. Mobile friendly. Easy to maintain.
+        </p>
+
+        <h2 id="tjanster">Tjänster</h2>
+        <p>Landningssidor, företagshemsidor, enklare webbappar och SEO-grunder.</p>
+
+        <h2 id="projekt">Projekt</h2>
+        <p>Här kan du lista exempelprojekt (länkar, screenshots, beskrivning).</p>
+
+        <h2 id="kontakt">Kontakt</h2>
+        <p>
+          <a href="mailto:nalin.perotsur@example.com">Contact me</a>
+        </p>
+      </div>
+    </main>
   </div>
 </body>
 </html>
